@@ -14,6 +14,8 @@ public class MainActivity extends AppCompatActivity {
     private static final String LOG_TAG = MainActivity.class.getSimpleName();
     public static final String EXTRA_MESSAGE =
             "com.example.twoactivities.extra.MESSAGE";
+    private static final String TEXT_STATE = "currentText";
+
     private EditText mMessageEditText;
     private TextView mReplyHeadTextView;
     private TextView mReplyTextView;
@@ -27,6 +29,9 @@ public class MainActivity extends AppCompatActivity {
         mReplyHeadTextView = findViewById(R.id.text_header_reply);
         mReplyTextView = findViewById(R.id.text_message_reply);
         mTextViewMainStart = findViewById(R.id.textView_main_start);
+        if(savedInstanceState!=null){
+            mTextViewMainStart.setText(savedInstanceState.getString(TEXT_STATE));
+        }
     }
 
     public void launchSecondActivity(View view) {
@@ -53,5 +58,13 @@ public class MainActivity extends AppCompatActivity {
     public void startTask(View view) {
         mTextViewMainStart.setText(R.string.napping);
         new SimpleAsyncTask(mTextViewMainStart).execute();
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        // Save the state of the TextView
+        outState.putString(TEXT_STATE,
+                mTextViewMainStart.getText().toString());
     }
 }
