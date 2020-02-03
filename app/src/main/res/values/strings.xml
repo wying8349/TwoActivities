@@ -2,7 +2,7 @@
     <string name="app_name">Two Activities</string>
     <string name="activity2_name">Second Activities</string>
     <string name="button_main">SEND</string>
-    <string name="text_header">Message Recieved</string>
+    <string name="text_header">Message Recieved from: </string>
     <string name="editText_main">Enter Your Message Here</string>
     <string name="button_second">Reply</string>
     <string name="editText_second">Enter Your Reply Here</string>
@@ -10,13 +10,20 @@
     <string name="button_main_starttask">Start</string>
     <string name="textView_main_start">Ready to Start</string>
     <string name="napping">Napping...</string>
-
     <string name="edittext_uri">http://developer.android.com</string>
     <string name="button_uri">Open Website</string>
-
     <string name="edittext_loc">Golden Gate Bridge</string>
     <string name="button_loc">Open Location</string>
-
     <string name="edittext_share">\Share anything</string>
     <string name="button_share">Share This Text</string>
+    <string name="share_text_with">Share this text with: </string>
+    <string name="uri_label"></string>
+    <string name="text_uri_message"></string>
+
+    <string name="editText_main_username">Your name</string>
+    <string name="editText_2_username">Name looking for</string>
+
+    <string name="button_query">Query</string>
+
+
 </resources>
