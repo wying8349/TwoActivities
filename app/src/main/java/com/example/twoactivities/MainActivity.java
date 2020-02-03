@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText mMessageEditText;
     private TextView mReplyHeadTextView;
     private TextView mReplyTextView;
+    private TextView mTextViewMainStart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         mMessageEditText = findViewById(R.id.editText_main);
         mReplyHeadTextView = findViewById(R.id.text_header_reply);
         mReplyTextView = findViewById(R.id.text_message_reply);
+        mTextViewMainStart = findViewById(R.id.textView_main_start);
     }
 
     public void launchSecondActivity(View view) {
@@ -49,5 +51,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void startTask(View view) {
+        mTextViewMainStart.setText(R.string.napping);
+        new SimpleAsyncTask(mTextViewMainStart).execute();
     }
 }

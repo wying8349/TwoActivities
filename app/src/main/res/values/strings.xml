@@ -9,4 +9,5 @@
     <string name="text_header_reply">Reply Received</string>
     <string name="button_main_starttask">Start</string>
     <string name="textView_main_start">Ready to Start</string>
+    <string name="napping">Napping...</string>
 </resources>
