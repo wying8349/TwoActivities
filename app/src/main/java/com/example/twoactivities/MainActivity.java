@@ -3,6 +3,7 @@ package com.example.twoactivities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView mReplyHeadTextView;
     private TextView mReplyTextView;
     private TextView mTextViewMainStart;
+    private EditText mWebsiteEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         if(savedInstanceState!=null){
             mTextViewMainStart.setText(savedInstanceState.getString(TEXT_STATE));
         }
+        mWebsiteEditText = findViewById(R.id.website_edittext);
     }
 
     public void launchSecondActivity(View view) {
@@ -66,5 +69,24 @@ public class MainActivity extends AppCompatActivity {
         // Save the state of the TextView
         outState.putString(TEXT_STATE,
                 mTextViewMainStart.getText().toString());
+    }
+
+    public void openWebsite(View view) {
+        String url = mWebsiteEditText.getText().toString();
+
+        // Parse the URI and create the intent.
+        Uri webpage = Uri.parse(url);
+        Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
+
+        // Find an activity to hand the intent and start that activity.
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        } else {
+            Log.d("ImplicitIntents", "Can't handle this intent!");
+        }
+    }
+
+    public void openLocation(View view) {
+
     }
 }

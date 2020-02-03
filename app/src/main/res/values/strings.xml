@@ -10,4 +10,13 @@
     <string name="button_main_starttask">Start</string>
     <string name="textView_main_start">Ready to Start</string>
     <string name="napping">Napping...</string>
+
+    <string name="edittext_uri">http://developer.android.com</string>
+    <string name="button_uri">Open Website</string>
+
+    <string name="edittext_loc">Golden Gate Bridge</string>
+    <string name="button_loc">Open Location</string>
+
+    <string name="edittext_share">\Share anything</string>
+    <string name="button_share">Share This Text</string>
 </resources>
